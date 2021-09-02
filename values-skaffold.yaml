@@ -1,0 +1,27 @@
+syncFromPrimary: true
+
+kubeconfigs:
+  configmap:
+    name: "kubeconfig-iamdev"
+
+syncrules:
+  local:
+    direction: local
+    sourceNamspaces: []
+    annotations: {}
+    onconflict: ""
+    resources:
+    - secrets
+  remote:
+    annotations:
+      iamstudent.dev/syncTargets: dev
+    direction: fromPrimary
+    onconflict: ""
+    resources:
+    - secrets
+    sourceNamspaces:
+    - truth
+
+commandargs:
+  - "--syncinterval-remote"
+  - "1"

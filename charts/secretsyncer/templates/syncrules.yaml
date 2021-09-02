@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: syncrules
+  namespace: {{ .Release.Namespace }}
+  labels:
+    iamstudent.dev/sync: config
+data:
+  syncrules.yaml: |-
+{{ toYaml .Values.syncrules | indent 4 }}

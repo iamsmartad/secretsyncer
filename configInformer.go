@@ -12,6 +12,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 )
 
+// ConfigController ...
 type ConfigController struct {
 	informerFactory informers.SharedInformerFactory
 	configInformer  coreinformers.ConfigMapInformer

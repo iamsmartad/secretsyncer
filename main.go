@@ -18,16 +18,21 @@ import (
 )
 
 var (
-	kubeconfig             *string
-	syncrulespath          *string
-	syncintervalRemote     *int64
-	syncintervalLocal      *int64
-	TRUTHNAMESPACE         *string
-	basesynclabel          *string
-	SYNCLABEL              string
+	kubeconfig         *string
+	syncrulespath      *string
+	syncintervalRemote *int64
+	syncintervalLocal  *int64
+	basesynclabel      *string
+	// TRUTHNAMESPACE ...
+	TRUTHNAMESPACE *string
+	// SYNCLABEL ...
+	SYNCLABEL string
+	// SYNCRESOURCEVERSIONKEY ...
 	SYNCRESOURCEVERSIONKEY string
-	SYNCSOURCENAME         string
-	SYNCSOURCENAMESPACE    string
+	// SYNCSOURCENAME ...
+	SYNCSOURCENAME string
+	// SYNCSOURCENAMESPACE ...
+	SYNCSOURCENAMESPACE string
 )
 
 func main() {

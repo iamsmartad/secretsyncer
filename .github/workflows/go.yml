@@ -2,11 +2,11 @@ name: secretsyncer
 
 on:
   push:
-    branches: [master]
+    branches: [master, main]
     tags:
       - "v*"
   pull_request:
-    branches: [master]
+    branches: [master, main]
 
 jobs:
   test:

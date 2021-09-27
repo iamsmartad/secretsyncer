@@ -1,12 +1,10 @@
-name: secretsyncer
+name: release
 
 on:
   push:
     branches: [master, main]
     tags:
-      - "v*"
-  pull_request:
-    branches: [master, main]
+      - "v1.*"
 
 jobs:
   test:
@@ -18,25 +16,6 @@ jobs:
         with:
           go-version: ^1.17
         id: go
-
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
-
-      - name: Get dependencies
-        run: |
-          go get -v -t -d ./...
-          if [ -f Gopkg.toml ]; then
-              curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-              dep ensure
-          fi
-
-      - name: Run coverage
-        run: go test -race -coverprofile=coverage.out -covermode=atomic
-
-      - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash)
 
   build:
     name: Build

@@ -1,6 +1,6 @@
 # !!! Work In Progress !!!
 
-![main pipeline](https://github.com/iamsmartad/secretsyncer/actions/workflows/go.yml/badge.svg) [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/iamsmartad/secretsyncer.svg)](https://github.com/iamsmartad/secretsyncer) [![GoReportCard](https://goreportcard.com/badge/github.com/iamsmartad/secretsyncer)](https://goreportcard.com/report/github.com/iamsmartad/secretsyncer) [![GitHub license](https://img.shields.io/github/license/iamsmartad/secretsyncer)](https://github.com/iamsmartad/secretsyncer/blob/master/LICENSE)
+![main pipeline](https://github.com/iamsmartad/secretsyncer/actions/workflows/pullrequest.yaml/badge.svg) [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/iamsmartad/secretsyncer.svg)](https://github.com/iamsmartad/secretsyncer) [![GoReportCard](https://goreportcard.com/badge/github.com/iamsmartad/secretsyncer)](https://goreportcard.com/report/github.com/iamsmartad/secretsyncer) [![GitHub license](https://img.shields.io/github/license/iamsmartad/secretsyncer)](https://github.com/iamsmartad/secretsyncer/blob/master/LICENSE)
 
 <!-- [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://https://docker.com/) -->
 

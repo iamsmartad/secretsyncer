@@ -1,0 +1,18 @@
+name: release
+
+on:
+  push:
+    branches: [master, main]
+    tags:
+      - "v1.*"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.17
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.17
+        id: go

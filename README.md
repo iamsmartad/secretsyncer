@@ -1,3 +1,5 @@
+# !!! Work In Progress !!!
+
 # secretsyncer
 
 > sync kubernetes secrets between namespaces and across clusters

@@ -29,42 +29,10 @@ jobs:
           fi
 
       - name: Run coverage
-        run: go test -race -coverprofile=coverage.out -covermode=atomic
+        run: go test ./...
 
-      - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash)
+      # - name: Run coverage
+      #   run: go test -race -coverprofile=coverage.out -covermode=atomic
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Go 1.17
-        uses: actions/setup-go@v2
-        with:
-          go-version: ^1.17
-        id: go
-
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v2
-
-      - name: Get dependencies
-        run: |
-          go get -v -t -d ./...
-          if [ -f Gopkg.toml ]; then
-              curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-              dep ensure
-          fi
-
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-
-      - name: Build
-        run: |
-          env GOOS=linux GOARCH=amd64 go build -o dist/secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }} .
-
-      - name: Upload binary
-        uses: actions/upload-artifact@v2
-        with:
-          name: secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }}
-          path: dist/secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }}
+      # - name: Upload coverage to Codecov
+      #   run: bash <(curl -s https://codecov.io/bash)

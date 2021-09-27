@@ -14,7 +14,7 @@ import (
 // 	return false, false
 // }
 
-// pass two maps of annotations and check if there are any matches between them
+// FindMatchingAnnotation pass two maps of annotations and check if there are any matches between them
 // values on individual keys are split by `,` to a foo=bar,baz would match foo=baz,too
 func FindMatchingAnnotation(pool, criteria map[string]string) bool {
 	splitPool := make(map[string][]string)

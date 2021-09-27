@@ -15,6 +15,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 )
 
+// SecretController ...
 type SecretController struct {
 	informerFactory informers.SharedInformerFactory
 	secretInformer  coreinformers.SecretInformer

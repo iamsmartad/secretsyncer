@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// OSReadDir ...
 func OSReadDir(root string) ([]string, error) {
 	var files []string
 	f, err := os.Open(root)

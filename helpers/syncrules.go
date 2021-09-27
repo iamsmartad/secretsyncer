@@ -10,6 +10,7 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+// SyncRule ...
 type SyncRule struct {
 	Direction   string
 	Namespaces  []string `yaml:"sourceNamspaces"`
@@ -18,6 +19,7 @@ type SyncRule struct {
 	Resources   []string
 }
 
+// GetSyncRules ...
 func GetSyncRules(path string) map[string]SyncRule {
 	var syncrules map[string]SyncRule
 	var content []byte

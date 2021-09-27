@@ -75,8 +75,8 @@ branch. Pull requests are warmly welcome."
 
 <!-- - Project homepage: https://your.github.com/awesome-project/ -->
 
-- Repository: https://github.com/gregod-com/secretsyncer
-- Issue tracker: https://github.com/gregod-com/secretsyncer/issues
+- Repository: https://github.com/iamsmartad/secretsyncer
+- Issue tracker: https://github.com/iamsmartad/secretsyncer/issues
 - Related projects:
 
 ## Licensing

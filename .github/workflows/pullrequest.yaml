@@ -28,7 +28,7 @@ jobs:
               dep ensure
           fi
 
-      - name: Run coverage
+      - name: Run tests
         run: go test ./...
 
       # - name: Run coverage

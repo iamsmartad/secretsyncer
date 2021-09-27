@@ -61,23 +61,9 @@ jobs:
       - name: Build
         run: |
           env GOOS=linux GOARCH=amd64 go build -o dist/secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }} .
-          env GOOS=darwin GOARCH=amd64 go build -o dist/secretsyncer-darwin-amd64-${{ steps.get_version.outputs.VERSION }} .
-          env GOOS=freebsd GOARCH=amd64 go build -o dist/secretsyncer-freebsd-amd64-${{ steps.get_version.outputs.VERSION }} .
-
-      - name: Upload binary
-        uses: actions/upload-artifact@v2
-        with:
-          name: secretsyncer-darwin-amd64-${{ steps.get_version.outputs.VERSION }}
-          path: dist/secretsyncer-darwin-amd64-${{ steps.get_version.outputs.VERSION }}
 
       - name: Upload binary
         uses: actions/upload-artifact@v2
         with:
           name: secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }}
           path: dist/secretsyncer-linux-amd64-${{ steps.get_version.outputs.VERSION }}
-
-      - name: Upload binary
-        uses: actions/upload-artifact@v2
-        with:
-          name: secretsyncer-freebsd-amd64-${{ steps.get_version.outputs.VERSION }}
-          path: dist/secretsyncer-freebsd-amd64-${{ steps.get_version.outputs.VERSION }}

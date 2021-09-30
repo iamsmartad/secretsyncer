@@ -1,16 +1,16 @@
 remote_theme: pages-themes/cayman@v0.2.0
+repository: iamsmartad/secretsyncer
 title: secretsyncer
-description: description for secretsyncer
-show_downloads: "false"
+description: sync kubernetes secrets between namespaces and across clusters
+show_downloads: false
 plugins:
-  - jekyll-remote-theme
-  - jekyll-relative-links
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji
 relative_links:
   enabled: true
   collections: true
 include:
   - index.md
   - README.md
-kramdown:
-  toc_levels: 2..3
-markdown: kramdown

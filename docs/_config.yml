@@ -1,5 +1,9 @@
-theme: just-the-docs
+remote_theme: pages-themes/cayman@v0.2.0
+title: secretsyncer
+description: description for secretsyncer
+show_downloads: "false"
 plugins:
+  - jekyll-remote-theme
   - jekyll-relative-links
 relative_links:
   enabled: true

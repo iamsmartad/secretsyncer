@@ -13,3 +13,4 @@ include:
   - README.md
 kramdown:
   toc_levels: 2..3
+markdown: kramdown

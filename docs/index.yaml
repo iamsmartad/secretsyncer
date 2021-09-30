@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  secretsyncer:
+  - apiVersion: v2
+    appVersion: 0.3.1
+    created: "2021-09-30T10:43:37.004408+02:00"
+    description: simple sync-agent to clone secrets from a primary cluster to a local
+      cluster
+    digest: df35ba7db7b0b8b7df3af3cafc0804f6c9c036ffe0b63820ac36544377cd8692
+    name: secretsyncer
+    type: application
+    urls:
+    - https://iamsmartad.github.io/secretsyncer/secretsyncer-0.3.1.tgz
+    version: 0.3.1
+generated: "2021-09-30T10:43:37.003505+02:00"

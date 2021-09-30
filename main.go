@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/iamsmartad/secretsyncer/helpers"
+	"github.com/iamsmartad/secretsyncer/pkg"
 	log "github.com/sirupsen/logrus"
 
 	v1 "k8s.io/api/core/v1"
@@ -87,7 +88,7 @@ func watchRemoteSecrets(namespace string, syncrule helpers.SyncRule) chan struct
 		time.Minute*time.Duration(*syncintervalRemote),
 		namespaceOptions,
 		labelOptions)
-	controller := NewSecretController(factory, syncrule, false)
+	controller := pkg.NewSecretController(factory, syncrule, false)
 	stop := make(chan struct{})
 	err := controller.Run(stop)
 	if err != nil {
@@ -101,7 +102,7 @@ func watchLocalSecrets(syncrule helpers.SyncRule) chan struct{} {
 		opts.LabelSelector = SYNCLABEL
 	})
 	factory := informers.NewSharedInformerFactoryWithOptions(getInClusterClientset(), time.Minute*time.Duration(*syncintervalLocal), labelOptions)
-	controller := NewSecretController(factory, syncrule, true)
+	controller := pkg.NewSecretController(factory, syncrule, true)
 	stop := make(chan struct{})
 	err := controller.Run(stop)
 	if err != nil {
@@ -118,7 +119,7 @@ func watchOwnConfigsMap() chan struct{} {
 	factory := informers.NewSharedInformerFactoryWithOptions(getInClusterClientset(),
 		time.Hour*24,
 		labelOptions)
-	controller := NewConfigController(factory)
+	controller := pkg.NewConfigController(factory)
 	stop := make(chan struct{})
 	err := controller.Run(stop)
 	if err != nil {

@@ -11,3 +11,5 @@ relative_links:
 include:
   - index.md
   - README.md
+kramdown:
+  toc_levels: 2..3
